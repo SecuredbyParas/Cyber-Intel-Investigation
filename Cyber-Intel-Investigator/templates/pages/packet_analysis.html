@@ -1,0 +1,24 @@
+    <!-- ---------- PACKET ANALYSIS ---------- -->
+    <section class="page hidden" id="page-packets">
+      <h1><i class="fas fa-magnifying-glass-chart"></i> Packet Analysis</h1>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-file-arrow-up"></i> Pcap File</div>
+        <div class="card-body">
+          <label class="upload-box" for="pcap-file">
+            <i class="fas fa-cloud-arrow-up"></i>
+            <b>Upload your pcap file</b>
+            <span id="pcap-name">Click here to choose a .pcap or .pcapng file</span>
+          </label>
+          <input type="file" id="pcap-file" accept=".pcap,.pcapng,.cap" hidden
+                 onchange="showFileName('pcap-file', 'pcap-name', 'Click here to choose a .pcap or .pcapng file')">
+          <div class="row">
+            <button class="btn primary" onclick="analyzePcap(false)"><i class="fas fa-search"></i> Analyze Packets</button>
+            <button class="btn" onclick="analyzePcap(true)"><i class="fas fa-flask"></i> Try Sample Pcap</button>
+          </div>
+          <p class="error" id="pcap-error"></p>
+        </div>
+      </div>
+
+      <div id="pcap-result" class="hidden"></div>
+    </section>

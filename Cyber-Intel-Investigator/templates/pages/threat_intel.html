@@ -1,0 +1,21 @@
+    <!-- ---------- THREAT INTELLIGENCE ---------- -->
+    <section class="page hidden" id="page-threat">
+      <h1><i class="fas fa-globe"></i> Threat Intelligence</h1>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-link"></i> Target URL</div>
+        <div class="card-body">
+          <div class="form-row">
+            <div style="flex:1">
+              <label for="scrape-url">Website to analyse</label>
+              <input type="text" id="scrape-url" placeholder="https://example.com">
+            </div>
+            <button class="btn primary" id="scrape-btn" onclick="runScrape()"><i class="fas fa-spider"></i> Analyse</button>
+          </div>
+          <p class="info"><i class="fas fa-circle-info"></i> Collects page info, security headers, links, forms, cookies and finds security risks.</p>
+          <p class="error" id="scrape-error"></p>
+        </div>
+      </div>
+
+      <div id="scrape-result" class="hidden"></div>
+    </section>

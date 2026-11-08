@@ -1,0 +1,29 @@
+    <!-- ---------- NETWORK SCAN ---------- -->
+    <section class="page hidden" id="page-scan">
+      <h1><i class="fas fa-network-wired"></i> Network Scan</h1>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-crosshairs"></i> Scan Configuration</div>
+        <div class="card-body">
+          <div class="form-row">
+            <div>
+              <label for="scan-host">Target Host / IP</label>
+              <input type="text" id="scan-host" placeholder="e.g. 127.0.0.1 or scanme.nmap.org">
+            </div>
+            <div>
+              <label for="scan-type">Scan Type</label>
+              <select id="scan-type">
+                <option value="common">Common Services (22 ports)</option>
+                <option value="top20">Top 20 Ports</option>
+                <option value="full">Full Scan (1-1024)</option>
+              </select>
+            </div>
+            <button class="btn primary" id="scan-btn" onclick="runScan()"><i class="fas fa-play"></i> Start Scan</button>
+          </div>
+          <p class="info"><i class="fas fa-circle-info"></i> Use <b>127.0.0.1</b> or <b>scanme.nmap.org</b> for safe testing. Only scan computers you own or have permission to test.</p>
+          <p class="error" id="scan-error"></p>
+        </div>
+      </div>
+
+      <div id="scan-result" class="hidden"></div>
+    </section>

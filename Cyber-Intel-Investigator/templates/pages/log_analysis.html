@@ -1,0 +1,51 @@
+    <!-- ---------- LOG ANALYSIS ---------- -->
+    <section class="page hidden" id="page-logs">
+      <h1><i class="fas fa-file-lines"></i> Log Analysis</h1>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-upload"></i> Upload Log File</div>
+        <div class="card-body">
+          <label class="upload-box" for="log-file">
+            <i class="fas fa-cloud-arrow-up"></i>
+            <b>Upload your log file</b>
+            <span id="log-name">Click here to choose a .log or .txt file</span>
+          </label>
+          <input type="file" id="log-file" accept=".log,.txt" hidden
+                 onchange="showFileName('log-file', 'log-name', 'Click here to choose a .log or .txt file')">
+          <div class="row">
+            <label for="log-type">Log type:</label>
+            <select id="log-type">
+              <option value="auto">Auto detect</option>
+              <option value="auth">Authentication log</option>
+              <option value="server">Web server log</option>
+              <option value="firewall">Firewall log</option>
+            </select>
+            <button class="btn primary" onclick="analyzeLog()"><i class="fas fa-magnifying-glass"></i> Analyze Log</button>
+          </div>
+          <p class="error" id="log-error"></p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-circle-info"></i> Types of logs you can upload</div>
+        <div class="card-body log-types">
+          <div>
+            <h3><i class="fas fa-key"></i> 1. Authentication log</h3>
+            <p>SSH login records, for example <code>/var/log/auth.log</code>. Finds failed logins, brute force attacks and sudo commands.</p>
+            <small>Failed password for root from 185.220.101.10 port 51234 ssh2</small>
+          </div>
+          <div>
+            <h3><i class="fas fa-server"></i> 2. Web server log</h3>
+            <p>Apache or Nginx access log. Finds SQL injection, path traversal, attack tools and requests for secret files.</p>
+            <small>45.33.32.156 - - [12/Jun/2024:10:01:10 +0000] "GET /login?id=1' OR '1'='1 HTTP/1.1" 500 310 "sqlmap/1.7"</small>
+          </div>
+          <div>
+            <h3><i class="fas fa-fire"></i> 3. Firewall log</h3>
+            <p>Firewall records with SRC= and DPT= fields (Linux iptables style) or a Windows <code>pfirewall.log</code>. Finds blocked traffic and port scans.</p>
+            <small>2024-06-12T10:00:01Z FIREWALL BLOCK TCP SRC=185.220.101.10 DST=10.0.0.1 SPT=50001 DPT=22</small>
+          </div>
+        </div>
+      </div>
+
+      <div id="log-result" class="hidden"></div>
+    </section>

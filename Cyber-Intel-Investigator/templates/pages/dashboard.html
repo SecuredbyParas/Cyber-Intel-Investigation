@@ -1,0 +1,53 @@
+    <!-- ---------- DASHBOARD ---------- -->
+    <section class="page" id="page-dashboard">
+      <h1><i class="fas fa-gauge-high"></i> Mission Control Dashboard</h1>
+
+      <div class="kpi-row">
+        <div class="kpi red"><i class="fas fa-bug"></i><div><b id="kpi-threats">0</b><span>Threats Detected</span></div></div>
+        <div class="kpi orange"><i class="fas fa-ban"></i><div><b id="kpi-ips">0</b><span>IPs Flagged</span></div></div>
+        <div class="kpi blue"><i class="fas fa-server"></i><div><b id="kpi-ports">0</b><span>Ports Scanned</span></div></div>
+        <div class="kpi green"><i class="fas fa-shield-halved"></i><div><b id="kpi-lines">0</b><span>Log Lines Analyzed</span></div></div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title"><i class="fas fa-clock"></i> Investigation Timeline</div>
+          <div class="card-body" id="timeline"><p class="muted">No investigations run yet.</p></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><i class="fas fa-triangle-exclamation"></i> Active Alerts</div>
+          <div class="card-body" id="alerts"><p class="muted">No alerts.</p></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-rocket"></i> Quick Start</div>
+        <div class="card-body quick-grid">
+          <div class="quick" onclick="showPage('logs')">
+            <i class="fas fa-file-lines"></i><h3>Log Analysis</h3>
+            <p>Analyze Auth, Server &amp; Firewall logs. Detect brute-force, SQLi, port scans.</p>
+            <span class="tag blue">Step 1</span>
+          </div>
+          <div class="quick" onclick="showPage('scan')">
+            <i class="fas fa-network-wired"></i><h3>Network Scan</h3>
+            <p>Port scan targets, discover open services and risky ports.</p>
+            <span class="tag orange">Step 2</span>
+          </div>
+          <div class="quick" onclick="showPage('packets')">
+            <i class="fas fa-magnifying-glass-chart"></i><h3>Packet Analysis</h3>
+            <p>Upload a pcap file and detect SQLi, XSS and malicious payloads.</p>
+            <span class="tag red">Step 3</span>
+          </div>
+          <div class="quick" onclick="showPage('threat')">
+            <i class="fas fa-globe"></i><h3>Threat Intelligence</h3>
+            <p>Scrape any website: headers, forms, links, cookies and security risks.</p>
+            <span class="tag blue">Step 4</span>
+          </div>
+          <div class="quick" onclick="showPage('live')">
+            <i class="fas fa-satellite-dish"></i><h3>Live Capture</h3>
+            <p>Capture and analyse real packets from your computer.</p>
+            <span class="tag red">Step 5</span>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,46 @@
+    <!-- ---------- LIVE CAPTURE ---------- -->
+    <section class="page hidden" id="page-live">
+      <h1><i class="fas fa-satellite-dish"></i> Live Packet Capture</h1>
+
+      <div class="card">
+        <div class="card-title"><i class="fas fa-sliders"></i> Capture Configuration</div>
+        <div class="card-body">
+          <div class="form-row">
+            <div>
+              <label for="cap-adapter">Network adapter (your IP)</label>
+              <select id="cap-adapter"><option>detecting...</option></select>
+            </div>
+            <div>
+              <label for="cap-ip">Watch only this IP (optional)</label>
+              <input type="text" id="cap-ip" placeholder="e.g. 8.8.8.8">
+            </div>
+            <div>
+              <label for="cap-count">Packets</label>
+              <select id="cap-count">
+                <option value="20">20</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+              </select>
+            </div>
+            <div>
+              <label for="cap-seconds">Max time</label>
+              <select id="cap-seconds">
+                <option value="10" selected>10 seconds</option>
+                <option value="30">30 seconds</option>
+                <option value="60">60 seconds</option>
+              </select>
+            </div>
+            <button class="btn primary" id="cap-btn" onclick="startCapture()"><i class="fas fa-play"></i> Start Capture</button>
+          </div>
+          <p class="info"><i class="fas fa-circle-info"></i> Live capture needs admin rights.
+            <b>Windows:</b> right click Command Prompt, choose <i>Run as administrator</i>, then run <code>python app.py</code>.
+            <b>Linux:</b> run <code>sudo python3 app.py</code>.
+            After pressing Start, open a website in another tab so there is some traffic to capture.
+            On Windows choose the adapter you are using (Wi-Fi or Ethernet).</p>
+          <p class="error" id="cap-error"></p>
+        </div>
+      </div>
+
+      <div id="cap-result" class="hidden"></div>
+    </section>

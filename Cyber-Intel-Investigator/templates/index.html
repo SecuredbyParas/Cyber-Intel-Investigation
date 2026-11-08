@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Intel Investigator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- ============ SIDEBAR ============ -->
+  <nav class="sidebar">
+    <div class="brand">
+      <i class="fas fa-shield-halved"></i>
+      <div>Cyber Intel<br><small>Investigator</small></div>
+    </div>
+    <ul>
+      <li><a class="nav-link active" data-page="dashboard"><i class="fas fa-gauge-high"></i> Dashboard</a></li>
+      <li><a class="nav-link" data-page="logs"><i class="fas fa-file-lines"></i> Log Analysis</a></li>
+      <li><a class="nav-link" data-page="scan"><i class="fas fa-network-wired"></i> Network Scan</a></li>
+      <li><a class="nav-link" data-page="packets"><i class="fas fa-magnifying-glass-chart"></i> Packet Analysis</a></li>
+      <li><a class="nav-link" data-page="threat"><i class="fas fa-globe"></i> Threat Intelligence</a></li>
+      <li><a class="nav-link" data-page="live"><i class="fas fa-satellite-dish"></i> Live Capture</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <header class="topbar">
+      <button class="menu-btn" onclick="document.body.classList.toggle('sidebar-hidden')"><i class="fas fa-bars"></i></button>
+      <span id="page-title"><i class="fas fa-gauge-high"></i> Dashboard</span>
+    </header>
+
+    {% include "pages/dashboard.html" %}
+
+    {% include "pages/log_analysis.html" %}
+
+    {% include "pages/network_scan.html" %}
+
+    {% include "pages/packet_analysis.html" %}
+
+    {% include "pages/threat_intel.html" %}
+
+    {% include "pages/live_capture.html" %}
+
+  </div>
+
+  <script src="{{ url_for('static', filename='js/helpers.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/log_analysis.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/network_scan.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/packet_analysis.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/threat_intel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/live_capture.js') }}"></script>
+</body>
+</html>
